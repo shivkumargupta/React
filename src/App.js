@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import {Switch, Route, Link} from 'react-router-dom';
+import Dashboard from './dashboard';
 
 export default class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      name:"Shiv"
+      name:"User"
     }
   }
 
@@ -13,12 +16,20 @@ export default class App extends React.Component{
   }
 
   loadfunction = () => {
-    alert("Hello World")
+    //alert("Hello World")
   }
 
   render(){
     return(
-      <h1>Hello {this.state.name}</h1>
+      <div>
+        <h1>Hello {this.state.name}</h1>
+        <Link to="/Dashboard">Link Dashboard</Link>
+        <Link to="/About">Link Product</Link>
+        <Link to="/">Link Home</Link>
+        <Switch>
+          <Route path="/dashboard" component={Dashboard}/>
+        </Switch>
+      </div>
     )
   }
 }
