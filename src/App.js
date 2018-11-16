@@ -1,17 +1,17 @@
 import React from 'react';
 
-import {Switch, Route, Link} from 'react-router-dom';
-import Dashboard from './dashboard';
+import { Link } from 'react-router-dom';
+import Main from './main';
 
-export default class App extends React.Component{
-  constructor(props){
+export default class App extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
-      name:"User"
+      name: "User"
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.loadfunction();
   }
 
@@ -19,16 +19,13 @@ export default class App extends React.Component{
     //alert("Hello World")
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div>
-        <h1>Hello {this.state.name}</h1>
-        <Link to="/Dashboard">Link Dashboard</Link>
-        <Link to="/About">Link Product</Link>
-        <Link to="/">Link Home</Link>
-        <Switch>
-          <Route path="/dashboard" component={Dashboard}/>
-        </Switch>
+        <Link to="/Dashboard">Dashboard</Link>
+        <Link to="/About">About</Link>
+        <Link to="/Home">Home</Link>
+        <Main />
       </div>
     )
   }
