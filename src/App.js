@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Link } from 'react-router-dom';
+import Header from './component/header';
 import Main from './main';
 
 export default class App extends React.Component {
@@ -22,9 +21,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/Dashboard">Dashboard</Link>
-        <Link to="/About">About</Link>
-        <Link to="/Home">Home</Link>
+        <Header />
         <Main />
       </div>
     )
